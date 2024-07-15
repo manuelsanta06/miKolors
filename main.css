@@ -1,0 +1,32 @@
+html,body,p {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+#pis{
+    display: inline;
+}
+
+#caca{
+    display:flex;
+    flex-direction:row;
+    justify-content:start;
+    align-items:center;
+}
+
+.botones{
+    width:60px;
+    height:60px;
+    /* padding: 30px; */
+    border:15px;
+    color: black;
+}
+#negro{background-color:#000}
+#rojo{background-color:#F00}
+#verde{background-color:#0F0}
+#azul{background-color:#00F}
+#rosa{background-color:#F3F}
+#celeste{background-color:#3FF}
+#amarillo{background-color:#FF3}
+#blanco{background-color:#FFF}
