@@ -27,6 +27,7 @@ function recur(colorn,x,y){
 }
 function change(colorn){
     movimientos++;
+    document.getElementById("movs").innerHTML=movimientos;
     if(tablero[0][0]==colorn)return;
     recur(colorn,0,1);
     recur(colorn,1,0);
