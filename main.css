@@ -4,11 +4,7 @@ html,body,p {
     border: none;
 }
 
-#pis{
-    display: inline;
-}
-
-#caca{
+#canva{
     display:flex;
     flex-direction:row;
     justify-content:start;
@@ -18,7 +14,6 @@ html,body,p {
 .botones{
     width:60px;
     height:60px;
-    /* padding: 30px; */
     border:15px;
     color: black;
 }

@@ -1,12 +1,11 @@
 const colores=["#000","#f00","#0f0","#00f","#f3f","#3ff","#ff3","#fff"]
-var tablero=[[0,1],[2,3],[4,5],[6,7]];
-var movimientos=0;
+var tablero=[];
 var canv;
 var ctx;
 
 function llenador(){
     tablero=[];
-    movimientos=0;
+    document.getElementById("movs").innerHTML=0;
     for(let y=-1;y<canv.getAttribute("height")/15;y++){
         tablero[y]=[];
         for(let x=0;x<canv.getAttribute("width")/15;x++)tablero[y].push(Math.floor(Math.random()*8));
@@ -26,8 +25,7 @@ function recur(colorn,x,y){
     tablero[y][x]=colorn;
 }
 function change(colorn){
-    movimientos++;
-    document.getElementById("movs").innerHTML=movimientos;
+    document.getElementById("movs").innerHTML++;
     if(tablero[0][0]==colorn)return;
     recur(colorn,0,1);
     recur(colorn,1,0);
@@ -36,8 +34,7 @@ function change(colorn){
 }
 
 window.onload=()=>{
-    let p=document.getElementById("pis");
-    canv=document.getElementById("caca");
+    canv=document.getElementById("canva");
     ctx=canv.getContext("2d");
     llenador();
 
@@ -48,9 +45,6 @@ window.onload=()=>{
     document.getElementById("y").onchange=()=>{
         canv.setAttribute("height",parseInt(document.getElementById("y").value)*15);
         llenador();
-    }
-    document.onclick=()=>{
-        p.innerHTML=window.event.clientX+","+window.event.clientY;
     }
     document.getElementById("negro").onclick=   ()=>{change(0);}
     document.getElementById("rojo").onclick=    ()=>{change(1);}
